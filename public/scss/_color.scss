@@ -1,0 +1,143 @@
+/* Cookielay */
+
+#cookielay {
+    &:before {
+        background: $white;
+    }
+}
+
+/* Switch */
+
+#cookielay {
+    .cl-switch {
+        .cl-switch__slider {
+            background: rgba(255, 255, 255, 0.2);
+            &:before {
+                background: rgba(255, 255, 255, 0.4);
+            }
+            &:after {
+                color: rgba(255, 255, 255, 0.4);
+            }
+        }
+        input:checked + .cl-switch__slider {
+            &:before {
+                background: rgba(255, 255, 255, 1);
+            }
+            &:after {
+                color: rgba(255, 255, 255, 1);
+            }
+        }
+    }
+}
+
+/* Buttons */
+
+#cookielay {
+    .cl-button {
+        &--primary {
+            border: solid 1px $white;
+            background: $white;
+            color: $primary;
+        }
+        &--secondary {
+            border: solid 1px $white;
+            color: $white;
+            &:hover {
+                background: $white;
+                color: $primary;
+            }
+        }
+        &--text {
+            color: $white;
+            &:after {
+                background: $white;
+            }
+        }
+    }
+}
+
+/* Checkboxes */
+
+#cookielay {
+    .cl-checkbox {
+        color: $white;
+        span {
+            border: solid 1px $white;
+            &:before {
+                color: $primary;
+            }
+        }
+        input:checked + span {
+            background: $white;
+        }
+    }
+}
+
+/* Cookielay Box */
+
+#cookielay {
+    .cookielay__box {
+        .cl-box {
+            background: $primary;
+            color: $white;
+        }
+    }
+    .cookielay__content,
+    .cookielay__settings {
+        background: $primary;
+        color: $white;
+    }
+    .cl-close {
+        &:before,
+        &:after {
+            background: $white;
+        }
+    }
+    .cl-title {
+        color: $white;
+    }
+    .cl-desc {
+        color: $white;
+    }
+    .cl-links {
+        a {
+            color: $white;
+        }
+    }
+    .cl-branding {
+        a {
+            color: $white;
+        }
+    }
+    .cl-inner {
+        border-top: solid 1px darken($primary, 5%);
+    }
+    .cl-accordions {
+        .cl-accordion {
+            .cl-accordion__inner {
+                background: darken($primary, 5%);
+                .cl-accordion__content {
+                    display: none;
+                    .cl-cookies {
+                        border-top: solid 1px $primary;
+                        .cl-cookie {
+                            border-bottom: dashed 1px $primary;
+                            table {
+                                tr {
+                                    td {
+                                        a {
+                                            color: $white;
+                                        }
+                                    }
+                                }
+                            }
+                            &:last-of-type {
+                                border-bottom: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

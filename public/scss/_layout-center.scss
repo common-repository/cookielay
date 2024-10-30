@@ -1,0 +1,313 @@
+/* Cookielay Box (Center) */
+
+#cookielay {
+    &.cl-layout-center {
+        transition: all 0.3s ease;
+        .cookielay__box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 95%;
+            max-width: 900px;
+            max-height: 100%;
+            overflow: auto;
+            .cl-box {
+                border-radius: 12px;
+            }
+            .cl-title {
+                font-weight: bold;
+                font-size: 20px;
+                padding: 24px;
+                @media (max-width: $breakpoint-small) {
+                    font-size: 16px;
+                    padding: 16px;
+                }
+            }
+            .cl-content {
+                padding: 24px;
+                @media (max-width: $breakpoint-small) {
+                    padding: 16px;
+                }
+            }
+            .cl-desc {
+                margin-bottom: 24px;
+                @media (max-width: $breakpoint-small) {
+                    margin-bottom: 16px;
+                }
+            }
+            .cl-checkboxes {
+                margin-bottom: 16px;
+                @media (max-width: $breakpoint-small) {
+                    margin-bottom: 8px;
+                }
+            }
+            .cl-buttons {
+                text-align: center;
+                display: flex;
+                flex-flow: row wrap;
+                gap: 8px;
+                .cl-button {
+                    flex: 1;
+                    @media (max-width: $breakpoint-small) {
+                        flex: 0 0 auto;
+                    }
+                }
+            }
+            .cl-footer {
+                display: flex;
+                flex-flow: row wrap;
+                align-items: flex-end;
+                justify-content: space-between;
+                padding: 24px;
+                @media (max-width: $breakpoint-small) {
+                    padding: 16px;
+                }
+                .cl-links {
+                    flex-shrink: 1;
+                    @media (max-width: $breakpoint-small) {
+                        flex: 0 0 100%;
+                        width: 100%;
+                        max-width: 100%;
+                        text-align: center;
+                    }
+                    a {
+                        opacity: 0.5;
+                        text-decoration: none;
+                        margin-right: 20px;
+                        &:last-of-type {
+                            margin-right: 0;
+                        }
+                    }
+                }
+                .cl-branding {
+                    flex-shrink: 1;
+                    @media (max-width: $breakpoint-small) {
+                        flex: 0 0 100%;
+                        width: 100%;
+                        max-width: 100%;
+                        text-align: center;
+                        margin-top: 5px;
+                    }
+                    a {
+                        display: flex;
+                        flex-flow: row wrap;
+                        align-items: center;
+                        text-decoration: none;
+                        font-weight: bold;
+                        font-size: 12px;
+                        svg {
+                            width: 24px;
+                            height: auto;
+                        }
+                    }
+                }
+            }
+        }
+        .cookielay__settings {
+            position: fixed;
+            left: 0;
+            height: 100%;
+            width: 600px;
+            overflow: auto;
+            padding: 60px 30px 30px 30px;
+            transition: all 0.3s ease;
+            transform: translateX(-100%);
+            @media (max-width: $breakpoint-medium) {
+                width: 500px;
+            }
+            @media (max-width: $breakpoint-small) {
+                width: 100%;
+                padding: 45px 15px 15px 15px;
+            }
+            .cl-close {
+                position: absolute;
+                top: 30px;
+                right: 30px;
+                cursor: pointer;
+                width: 20px;
+                height: 20px;
+                @media (max-width: $breakpoint-small) {
+                    top: 15px;
+                    right: 15px;
+                }
+                &:before {
+                    content: "";
+                    width: 100%;
+                    height: 1px;
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    transform: translateY(-50%) rotateZ(-45deg);
+                    display: block;
+                }
+                &:after {
+                    content: "";
+                    width: 100%;
+                    height: 1px;
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    transform: translateY(-50%) rotateZ(45deg);
+                    display: block;
+                }
+            }
+            .cl-title {
+                font-weight: bold;
+                font-size: 26px;
+                margin-bottom: 30px;
+                @media (max-width: $breakpoint-small) {
+                    font-size: 22px;
+                    margin-bottom: 15px;
+                }
+            }
+            .cl-desc {
+                margin-bottom: 30px;
+                @media (max-width: $breakpoint-small) {
+                    margin-bottom: 15px;
+                }
+            }
+            .cl-buttons {
+                .cl-button {
+                    margin-right: 10px;
+                    @media (max-width: $breakpoint-small) {
+                        width: auto;
+                    }
+                    &:last-of-type {
+                        margin-right: 0;
+                    }
+                }
+            }
+            .cl-accordions {
+                margin-top: 50px;
+                @media (max-width: $breakpoint-small) {
+                    margin-top: 30px;
+                }
+                .cl-accordion {
+                    margin-bottom: 30px;
+                    @media (max-width: $breakpoint-small) {
+                        flex: 0 0 100%;
+                        width: 100%;
+                        max-width: 100%;
+                        margin-bottom: 15px;
+                    }
+                    .cl-accordion__inner {
+                        .cl-accordion__header {
+                            padding: 20px;
+                            @media (max-width: $breakpoint-small) {
+                                padding: 15px;
+                            }
+                            .cl-group-name {
+                                font-weight: bold;
+                                font-size: 20px;
+                                margin-bottom: 30px;
+                                display: flex;
+                                flex-flow: row wrap;
+                                align-items: center;
+                                justify-content: space-between;
+                                @media (max-width: $breakpoint-small) {
+                                    margin-bottom: 10px;
+                                    font-size: 18px;
+                                }
+                                .cl-name {
+                                    flex-shrink: 1;
+                                    @media (max-width: $breakpoint-small) {
+                                        flex: 0 0 100%;
+                                        width: 100%;
+                                        max-width: 100%;
+                                        order: 2;
+                                        margin-top: 10px;
+                                    }
+                                }
+                                .cl-switch {
+                                    @media (max-width: $breakpoint-small) {
+                                        margin-left: auto;
+                                    }
+                                }
+                            }
+                            .cl-group-desc {
+                                margin-bottom: 15px;
+                            }
+                            .cl-more {
+                                font-weight: bold;
+                                cursor: pointer;
+                            }
+                        }
+                        .cl-accordion__content {
+                            display: none;
+                            text-align: right;
+                            .cl-cookies {
+                                .cl-cookie {
+                                    padding: 20px;
+                                    @media (max-width: $breakpoint-small) {
+                                        padding: 15px;
+                                    }
+                                    .cl-switch {
+                                        margin-left: auto;
+                                        margin-bottom: 10px;
+                                        .cl-switch__slider {
+                                            cursor: pointer;
+                                            display: block;
+                                            width: 40px;
+                                            height: 20px;
+                                            position: relative;
+                                            transition: all 0.3s ease;
+                                            &:before {
+                                                height: 12px;
+                                                width: 12px;
+                                                top: 4px;
+                                                left: 4px;
+                                            }
+                                        }
+                                        input:checked + .cl-switch__slider {
+                                            &:before {
+                                                transform: translateX(20px);
+                                            }
+                                        }
+                                    }
+                                    table {
+                                        padding-bottom: 10px;
+                                        tr {
+                                            td {
+                                                @media (max-width: $breakpoint-large) {
+                                                    display: block;
+                                                }
+                                                &:first-child {
+                                                    padding-right: 10px;
+                                                    width: 180px;
+                                                    font-weight: bold;
+                                                    @media (max-width: $breakpoint-large) {
+                                                        padding-right: 0;
+                                                        width: 100%;
+                                                        margin-top: 10px;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        &:last-of-type {
+                                            margin-bottom: 0;
+                                            padding-bottom: 0;
+                                            border-bottom: 0;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &.cl-visible {
+                transform: translateX(0);
+            }
+        }
+    }
+    &.cl-moved {
+        left: 600px;
+        @media (max-width: $breakpoint-medium) {
+            left: 500px;
+        }
+        @media (max-width: $breakpoint-small) {
+            left: 100%;
+        }
+    }
+}

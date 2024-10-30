@@ -1,0 +1,37 @@
+/* Reset */
+
+#cookielay-container {
+    * {
+        box-sizing: border-box;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        margin: 0;
+    }
+    a {
+        text-decoration: none;
+        box-shadow: none;
+    }
+    select {
+        box-shadow: none;
+        font-size: 13px;
+        max-width: none;
+        min-height: 0;
+        line-height: normal;
+        padding: 0;
+        color: $black !important;
+        &:not([multiple]) {
+            padding: 12px;
+        }
+    }
+    .color * {
+        box-sizing: unset;
+    }
+    input[type="text"],
+    input[type="url"],
+    input[type="number"],
+    textarea {
+        min-height: 0;
+        line-height: normal;
+        font-size: 13px;
+    }
+}

@@ -1,0 +1,213 @@
+/* Header */
+
+#cookielay-container {
+    .cookielay-header {
+        background: $white;
+        padding: 15px;
+        border-radius: $global-radius;
+        margin-bottom: 15px;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: space-between;
+        @include media-breakpoint-down(md) {
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            img {
+                height: 100px;
+                width: auto;
+                margin-right: 20px;
+                @include media-breakpoint-down(md) {
+                    height: 80px;
+                    margin-right: 15px;
+                }
+            }
+            .name {
+                font-size: 44px;
+                font-family: 'Bebas Neue', cursive;
+                color: $primary;
+                display: flex;
+                align-items: flex-end;
+                line-height: 1;
+                @include media-breakpoint-down(md) {
+                    font-size: 34px;
+                }
+                span {
+                    font-size: 13px;
+                    margin-bottom: 7px;
+                    font-weight: $font-weight-bold;
+                    margin-left: 5px;
+                    font-family: $font-family-base;
+                }
+            }
+        }
+        .info {
+            display: flex;
+            flex-flow: row wrap;
+            align-items: center;
+            @include media-breakpoint-down(md) {
+                margin-top: 20px;
+            }
+            .status {
+                display: flex;
+                flex-flow: row wrap;
+                align-items: center;
+                font-weight: $font-weight-bold;
+                margin-bottom: 0;
+                span {
+                    width: 30px;
+                    height: 30px;
+                    display: block;
+                    border-radius: 50%;
+                    margin-right: 8px;
+                    color: $white;
+                    position: relative;
+                    @include media-breakpoint-down(sm) {
+                        display: none;
+                    }
+                    i {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                    }
+                }
+                &.active {
+                    color: $success-color;
+                    span {
+                        background: $success-color;
+                    }
+                }
+                &.inactive {
+                    color: $error-color;;
+                    span {
+                        background: $error-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Menu */
+
+#cookielay-container {
+    .cookielay-menu {
+        background: $white;
+        padding: 15px;
+        border-radius: $global-radius;
+        overflow: hidden;
+        @include media-breakpoint-down(lg) {
+            padding: 10px;
+        }
+        .cookielay-menu__toggle {
+            height: 40px;
+            width: 40px;
+            border-radius: $global-radius;
+            background: $gradient;
+            position: relative;
+            cursor: pointer;
+            span {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                display: block;
+                width: 24px;
+                height: 2px;
+                background: $white;
+                &:before {
+                    content: "";
+                    display: block;
+                    width: 100%;
+                    height: 2px;
+                    background: $white;
+                    position: absolute;
+                    top: -7px;
+                    left: 0;
+                    transition: transform 0.2s ease;
+                }
+                &:after {
+                    content: "";
+                    display: block;
+                    width: 100%;
+                    height: 2px;
+                    background: $white;
+                    position: absolute;
+                    bottom: -7px;
+                    left: 0;
+                    transition: transform 0.2s ease;
+                }
+            }
+            &.open {
+                span {
+                    background: transparent;
+                    &:before {
+                        top: 0;
+                        transform: rotate(135deg);
+                    }
+                    &:after {
+                        bottom: 0;
+                        transform: rotate(225deg);
+                    }
+                }
+            }
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-flow: row wrap;
+            @include media-breakpoint-down(lg) {
+                display: none;
+                margin: 0 -10px;
+                margin-top: 10px;
+                margin-bottom: -10px;
+            }
+            li {
+                margin-bottom: 0;
+                @include media-breakpoint-down(lg) {
+                    border-bottom: solid 1px rgba(0, 0, 0, 0.06);
+                }
+                a {
+                    background: transparent;
+                    display: block;
+                    padding: 10px 15px;
+                    border-radius: $global-radius;
+                    font-weight: $font-weight-bold;
+                    color: $primary;
+                    @include media-breakpoint-down(lg) {
+                        border-radius: 0;
+                    }
+                }
+                &.active{
+                    a {
+                        background: $gradient;
+                        color: $white;
+                    }
+                }
+                &.support {
+                    margin-left: auto;
+                    @include media-breakpoint-down(lg) {
+                        border-bottom: none;
+                    }
+                    a {
+                        background: $gradient;
+                        color: $white;
+                        @include media-breakpoint-down(lg) {
+                            background: transparent;
+                            color: $primary;
+                            border-bottom-left-radius: $global-radius;
+                            border-bottom-right-radius: $global-radius;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

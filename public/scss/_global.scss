@@ -1,0 +1,204 @@
+/* Global Settings */
+
+.cl-disabled-scroll {
+    overflow: hidden !important;
+}
+
+/* Cookielay */
+
+#cookielay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2147483647;
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: 'Karla', sans-serif;
+    cursor: default;
+    @media (max-width: $breakpoint-medium) {
+        font-size: 14px;
+    }
+    a {
+        font-size: 16px;
+        @media (max-width: $breakpoint-medium) {
+            font-size: 14px;
+        }
+    }
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.8;
+    }
+}
+
+/* Table */
+
+#cookielay {
+    table {
+        font-size: inherit;
+        border: none;
+        background: none;
+        text-align: left;
+        padding: 0;
+        margin: 0;
+        tr {
+            background: none;
+            td {
+                border: none;
+                padding: 0;
+                background: none;
+                vertical-align: top;
+                text-align: left;
+            }
+        }
+    }
+}
+
+/* Switch */
+
+#cookielay {
+    .cl-switch {
+        position: relative;
+        display: inline-block;
+        margin: 0;
+        margin-left: 70px;
+        input {
+            opacity: 0;
+            position: absolute;
+        }
+        .cl-switch__slider {
+            cursor: pointer;
+            display: block;
+            width: 60px;
+            height: 30px;
+            position: relative;
+            transition: all 0.3s ease;
+            &:before {
+                content: "";
+                position: absolute;
+                height: 22px;
+                width: 22px;
+                top: 4px;
+                left: 4px;
+                display: block;
+                transition: all 0.3s ease;
+            }
+            &:after {
+                content: attr(data-inactive);
+                font-size: 14px;
+                font-weight: normal;
+                position: absolute;
+                right: 100%;
+                top: 50%;
+                transform: translateY(-50%);
+                margin-right: 10px;
+                white-space: nowrap;
+            }
+        }
+        input:checked + .cl-switch__slider {
+            &:before {
+                transform: translateX(30px);
+            }
+            &:after {
+                content: attr(data-active);
+            }
+        }
+    }
+}
+
+/* Buttons */
+
+#cookielay {
+    .cl-button {
+        display: inline-block;
+        cursor: pointer;
+        font-weight: bold;
+        &--primary {
+            padding: 10px 20px;
+            border-radius: 8px;
+            @media (max-width: $breakpoint-small) {
+                width: 100%;
+                text-align: center;
+                padding: 10px 20px;
+            }
+        }
+        &--secondary {
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            @media (max-width: $breakpoint-small) {
+                width: 100%;
+                text-align: center;
+                padding: 10px 20px;
+            }
+        }
+        &--text {
+            &:after {
+                content: "";
+                display: block;
+                width: 100%;
+                height: 1px;
+                margin-top: 2px;
+                transition: all 0.3s ease;
+            }
+            &:hover {
+                &:after {
+                    width: 0;
+                }
+            }
+        }
+    }
+}
+
+/* Checkboxes */
+
+#cookielay {
+    .cl-checkboxes {
+        .cl-checkbox {
+            position: relative;
+            display: inline-flex;
+            flex-flow: row wrap;
+            align-items: center;
+            margin-right: 30px;
+            cursor: pointer;
+            margin-bottom: 0;
+            input {
+                position: absolute;
+                opacity: 0;
+                width: 0;
+                height: 0;
+            }
+            span {
+                position: relative;
+                display: inline-block;
+                flex: 0 0 20px;
+                width: 20px;
+                height: 20px;
+                border-radius: 5px;
+                margin-right: 8px;
+            }
+            input:checked + span {
+                &:before {
+                    content: "\e64c";
+                    font-family: "themify";
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    font-size: 12px;
+                }
+            }
+            &--essential {
+                opacity: 0.5;
+                cursor: default;
+            }
+        }
+    }
+}
